@@ -23,6 +23,7 @@ $router->group(['prefix' => 'event'], function () use ($router) {
     $router->post('', ['uses' => 'EventController@store']); // Crea un registro
     $router->put('/{id}', ['uses' => 'EventController@update']); // Actualiza un registro
     $router->delete('/{id}', ['uses' => 'EventController@destroy']); // Elimina un registro
+    $router->get('/{id}/guests', ['uses' => 'EventGuestController@showByEvent']);
 });
 
 $router->group(['prefix' => 'dresscode'], function () use ($router) {
@@ -39,7 +40,7 @@ $router->group(['prefix' => 'guest'], function () use ($router) {
     $router->post('', ['uses' => 'EventGuestController@store']); // Crea un registro
     $router->put('/{id}', ['uses' => 'EventGuestController@update']); // Actualiza un registro
     $router->delete('/{id}', ['uses' => 'EventGuestController@destroy']); // Elimina un registro
-    $router->get('/event/{id}', ['uses' => 'EventGuestController@showByEvent']); // Muestra solo un registro
+    // $router->get('/event/{id}', ['uses' => 'EventGuestController@showByEvent']); // Muestra solo un registro
 });
 
 $router->group(['prefix' => 'images'], function () use ($router) {
