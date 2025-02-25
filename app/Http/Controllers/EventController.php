@@ -46,7 +46,7 @@ class EventController extends Controller
 
         $response = [
             "data" => $data,
-            "message" => "Se actualizo correctamente el registro!"
+            "message" => "Se actualizo correctamente el registro"
         ];
         return response()->json($response, 200);
     }
